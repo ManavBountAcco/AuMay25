@@ -1,0 +1,150 @@
+/* Reset & box-sizing */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: sans-serif;
+  overflow-x: hidden;
+  padding-top: 60px; /* navbar height */
+  padding-bottom: 60px; /* footer height */
+}
+
+/* Navbar */
+.Navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #333;
+  padding: 0 20px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 60px;
+  z-index: 1000;
+}
+
+.Navbar ul {
+  display: flex;
+  list-style: none;
+}
+
+.Navbar li {
+  margin-right: 20px;
+}
+
+.Navbar a {
+  color: #f2f2f2;
+  padding: 14px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.Navbar a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.search-container {
+  display: flex;
+  align-items: center;
+}
+
+.search-container input {
+  padding: 5px;
+  margin-right: 5px;
+}
+
+/* About Section */
+.About {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+}
+
+.About-box {
+  text-align: center;
+  width: 80%;
+  max-width: 800px;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.box-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 20px;
+  justify-content: center;
+}
+
+.box {
+  background-color: aqua;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 200px;
+}
+
+/* Contact Section */
+.Contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+}
+
+.Contact-box {
+  width: 100%;
+  max-width: 800px;
+  text-align: center;
+  padding: 10px;
+  background-color: #b5adad;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Footer */
+.Footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .Navbar {
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+  }
+
+  .Navbar ul {
+    flex-direction: row;
+    width: 100%;
+  }
+
+  .Navbar li {
+    width: 100%;
+  }
+
+  .box-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .About-box, .Contact-box {
+    width: 95%;
+  }
+}
