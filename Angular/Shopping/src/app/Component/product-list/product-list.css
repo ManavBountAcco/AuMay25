@@ -1,0 +1,59 @@
+h2 ,p{
+  text-align: center;
+  margin: 20px 0;
+}
+
+.product-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: center;
+}
+
+.error-message {
+  color: red;
+  font-size: 13px;
+  margin-top: 4px;
+}
+
+
+.card {
+  width: 250px;
+  padding: 16px;
+  background: #f1f5f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.qty-toggle {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.qty-toggle button {
+  width: 30px;
+  height: 30px;
+  background-color: #1e40af;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button {
+  background: #1e3a8a;
+  color: white;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 6px;
+}
+
+.out-of-stock {
+  color: red;
+  font-weight: bold;
+}

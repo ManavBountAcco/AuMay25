@@ -1,0 +1,13 @@
+<nav class="navbar">
+  <a class="home-icon" [routerLink]="['/']" title="Go to Home">
+    🏠
+  </a>
+
+  <div class="nav-title">{{ currentTitle }}</div>
+
+  <a class="cart-section" [routerLink]="['/cart']" title="View Cart">
+    🛒 <span class="cart-count">{{ cartCount }}</span>
+  </a>
+</nav>
+
+<router-outlet></router-outlet>

@@ -1,0 +1,26 @@
+<div class="details-container" *ngIf="product">
+  <h2>{{ product.name }}</h2>
+  <p class="price">₹{{ product.price }}</p>
+  <p class="stock">Stock: {{ product.stock }}</p>
+
+  <div *ngIf="product.stock >= 11; else outOfStock">
+    <div class="quantity-toggle">
+      <button (click)="decrement()">-</button>
+      <span>{{ quantity }}</span>
+
+      <button (click)="increment()" [disabled]="product.quantity >= 3">+</button>
+    </div>
+
+    <button (click)="addToCart()" [disabled]="product.quantity === 0">
+      Add to Cart
+    </button>
+  </div>
+
+  <ng-template #outOfStock>
+    <p class="out-of-stock">Out of Stock</p>
+  </ng-template>
+</div>
+
+<div *ngIf="!product">
+  <p>Product not found.</p>
+</div>

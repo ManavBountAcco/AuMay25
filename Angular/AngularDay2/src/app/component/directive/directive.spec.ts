@@ -1,18 +1,39 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { Directive } from './directive';
+import { DirectiveComponent } from './directive'; // ✅ Correct import
 
-describe('Directive', () => {
-  let component: Directive;
-  let fixture: ComponentFixture<Directive>;
+describe('DirectiveComponent', () => {
+  let component: DirectiveComponent;
+  let fixture: ComponentFixture<DirectiveComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [Directive]
+      imports: [DirectiveComponent] // if it's a standalone component
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(Directive);
+    fixture = TestBed.createComponent(DirectiveComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });
+
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
+});
+
+
+describe('DirectiveComponent', () => {
+  let component: DirectiveComponent;
+  let fixture: ComponentFixture<DirectiveComponent>;
+
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      imports: [DirectiveComponent] // if it's a standalone component
+    })
+    .compileComponents();
+
+    fixture = TestBed.createComponent(DirectiveComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

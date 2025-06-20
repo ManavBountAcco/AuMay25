@@ -1,0 +1,33 @@
+<h2>All Products</h2>
+<p>Max Qty/item: 3 | Product must have stock > 10 to add</p>
+
+<div class="product-grid">
+  <div class="card" *ngFor="let product of products">
+    <h3>{{ product.name }}</h3>
+    <p>₹{{ product.price }}</p>
+    <p>Stock: {{ product.stock }}</p>
+
+    <div *ngIf="!isOutOfStock(product); else outOfStock">
+      <div class="qty-toggle">
+        <button (click)="decrement(product)">-</button>
+        <span>{{ getQuantity(product.id) }}</span>
+        <button (click)="increment(product)" [disabled]="!canAdd(product)">+</button>
+      </div>
+
+      <button (click)="addToCart(product)" [disabled]="!canAdd(product)">
+        Add to Cart
+      </button>
+
+      <!-- 🔴 Show error if any -->
+      <p *ngIf="errorMessages.has(product.id)" class="error-message">
+        {{ errorMessages.get(product.id) }}
+      </p>
+    </div>
+
+    <ng-template #outOfStock>
+      <p class="out-of-stock">Out of Stock</p>
+    </ng-template>
+
+    <a [routerLink]="['/product', product.id]">👁 View Product</a>
+  </div>
+</div>
