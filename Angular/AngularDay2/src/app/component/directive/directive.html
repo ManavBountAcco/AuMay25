@@ -1,0 +1,26 @@
+<h2>🎯 Angular Directive Playground</h2>
+
+<!-- 1. Hover to change text color -->
+<p class="test-item" appTextColor>
+  Hover me — text turns blue!
+</p>
+
+<!-- 2. Click to toggle background color -->
+<button class="test-item" appToggleBg>
+  Click me — background toggles!
+</button>
+
+<!-- 3. Hover to enlarge text -->
+<p class="test-item" appEnlargeText>
+  Hover me — I grow in size!
+</p>
+
+<!-- 4. Toggle *appIfTrue structural directive -->
+<button class="test-item" (click)="showMessage = !showMessage">
+  Toggle Show Message
+</button>
+
+<!-- Custom structural directive (like *ngIf) -->
+<p *appIfTrue="showMessage" class="test-item">
+  This is conditionally shown using *appIfTrue
+</p>
